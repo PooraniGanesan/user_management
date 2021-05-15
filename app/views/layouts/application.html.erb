@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UserManagement</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+    <nav class="nav">
+      <%if current_user.present? %>
+        <%=link_to "Profile", user_path(current_user.id), class: "nav-link" %>
+        <% if current_user.admin? %>
+            <%=link_to "Users", "/users", class: "nav-link"%>
+        <%end %>
+        <%=link_to "Logout", "/logout", class: "nav-link"%>
+      <%end %>
+    </nav>
+
+
+      <%= yield %>
+  </div>
+  </body>
+</html>

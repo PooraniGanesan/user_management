@@ -1,0 +1,104 @@
+Started GET "/" for ::1 at 2021-05-15 17:30:51 +0530
+  [1m[35m (42.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 352)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 66.8ms | ActiveRecord: 0.0ms | Allocations: 8880)
+
+
+Started GET "/login" for ::1 at 2021-05-15 17:30:53 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 566)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 5116)
+
+
+Started GET "/" for ::1 at 2021-05-15 17:32:19 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 352)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 8882)
+
+
+Started GET "/login" for ::1 at 2021-05-15 17:33:19 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 569)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 5074)
+
+
+Started GET "/users/new" for ::1 at 2021-05-15 17:33:21 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 53.0ms | Allocations: 6790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 105ms (Views: 68.2ms | ActiveRecord: 6.3ms | Allocations: 17679)
+
+
+Started POST "/users" for ::1 at 2021-05-15 17:33:43 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dMhOafD0Yi84bHc6ZD4NeZ99vUHiRbm12ZlSXjGHxNskxMYMPnBGv4mVod3Bgx6defmiY7gSXz8v60zYxyc8Fw==", "user"=>{"name"=>"Poorani", "password"=>"[FILTERED]", "email"=>"poorani@gmail.com", "phone_number"=>"", "address"=>{"street"=>"", "city"=>"", "state"=>"", "zip_code"=>""}}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "poorani@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (46.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "address", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Poorani"], ["email", "poorani@gmail.com"], ["password_digest", "$2a$12$u6VnhEJLzhHgkRW.8JE11.zfCimJ6hTqPljDjxskK8C4JhAG7hQIq"], ["address", "\"street\"=>\"\", \"city\"=>\"\", \"state\"=>\"\", \"zip_code\"=>\"\""], ["phone_number", ""], ["created_at", "2021-05-15 12:03:43.399693"], ["updated_at", "2021-05-15 12:03:43.399693"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 335ms (ActiveRecord: 48.7ms | Allocations: 5028)
+
+
+Started GET "/users/3" for ::1 at 2021-05-15 17:33:43 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.7ms | Allocations: 3112)
+
+
+Started GET "/" for ::1 at 2021-05-15 17:33:43 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 4119)
+
+
+Started GET "/login" for ::1 at 2021-05-15 17:33:45 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 299)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 4280)
+
+
+Started POST "/sessions" for ::1 at 2021-05-15 17:33:57 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"u6eY5iq/wqk91HHFxS6qcUA1ZBa2HYgffSVT2flWFfNzzbU8fEcpcJZ+2hTxTRWgpP33DxiEKBuutyI05NWwOA==", "email"=>"poorani@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "poorani@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 269ms (ActiveRecord: 0.5ms | Allocations: 1138)
+
+
+Started GET "/users/3" for ::1 at 2021-05-15 17:33:57 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:9
+  Rendered users/show.html.erb within layouts/application (Duration: 29.9ms | Allocations: 6607)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 34.4ms | ActiveRecord: 2.8ms | Allocations: 13030)
+
+
